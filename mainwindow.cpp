@@ -35,6 +35,7 @@ void MainWindow::on_pushButton_clicked()
 
     std::thread *test= new std::thread(task2,5);
    ui->label->setText(QString::number(a));
+   ui->label->setText(QString::number(a));
 
 }
 int task1(int msg)
