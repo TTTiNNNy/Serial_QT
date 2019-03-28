@@ -14,6 +14,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    int task1(int);
 
 private slots:
     void on_pushButton_clicked();
@@ -21,9 +22,12 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    int task3();
 };
-int task1(int);
+
+
+
 int task2(int);
-int task3();
+
 
 #endif // MAINWINDOW_H
