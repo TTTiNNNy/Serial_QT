@@ -16,89 +16,89 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout_3">
+     <layout class="QVBoxLayout" name="mainContainer">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <layout class="QHBoxLayout" name="portRow1">
         <item>
-         <widget class="QComboBox" name="comboBox"/>
+         <widget class="QComboBox" name="COM1_portBox"/>
         </item>
         <item>
-         <widget class="QCheckBox" name="com_1_checkBox">
+         <widget class="QCheckBox" name="COM1_activeBox">
           <property name="text">
            <string>COM1</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit"/>
+         <widget class="QLineEdit" name="COM1_receivedData"/>
         </item>
        </layout>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <layout class="QHBoxLayout" name="portRow2">
         <item>
-         <widget class="QComboBox" name="comboBox_2"/>
+         <widget class="QComboBox" name="COM2_portBox"/>
         </item>
         <item>
-         <widget class="QCheckBox" name="com_2_checkBox">
+         <widget class="QCheckBox" name="COM2_activeBox">
           <property name="text">
            <string>COM2</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_2"/>
+         <widget class="QLineEdit" name="COM2_receivedData"/>
         </item>
        </layout>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <layout class="QHBoxLayout" name="portRow3">
         <item>
-         <widget class="QComboBox" name="comboBox_3"/>
+         <widget class="QComboBox" name="COM3_portBox"/>
         </item>
         <item>
-         <widget class="QCheckBox" name="com_3_checkBox">
+         <widget class="QCheckBox" name="COM3_activeBox">
           <property name="text">
            <string>COM3</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_3"/>
+         <widget class="QLineEdit" name="COM3_receivedData"/>
         </item>
        </layout>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <layout class="QHBoxLayout" name="portRow4">
         <item>
-         <widget class="QComboBox" name="comboBox_4"/>
+         <widget class="QComboBox" name="COM4_portBox"/>
         </item>
         <item>
-         <widget class="QCheckBox" name="checkBox_4">
+         <widget class="QCheckBox" name="COM4_activeBox">
           <property name="text">
            <string>COM4</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_4"/>
+         <widget class="QLineEdit" name="COM4_receivedData"/>
         </item>
        </layout>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_6">
+       <layout class="QHBoxLayout" name="portRow5">
         <item>
-         <widget class="QComboBox" name="comboBox_5"/>
+         <widget class="QComboBox" name="COM5_portBox"/>
         </item>
         <item>
-         <widget class="QCheckBox" name="checkBox_3">
+         <widget class="QCheckBox" name="COM5_activeBox">
           <property name="text">
            <string>COM5</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_5"/>
+         <widget class="QLineEdit" name="COM5_receivedData"/>
         </item>
        </layout>
       </item>
