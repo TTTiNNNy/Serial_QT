@@ -1,19 +1,39 @@
 #ifndef SERIALTESTER_H
 #define SERIALTESTER_H
 
-#include <QStringList>
+#include <QObject>
+#include <QComboBox>
+#include <QCheckBox>
+#include <QLineEdit>
+#include <QLabel>
+
 #include <QSerialPort>
 #include <QSerialPortInfo>
 
-class SerialTester
+class SerialTester : QObject
 {
+    Q_OBJECT
+
 public:
-    SerialTester(int slotsNum);
-    QStringList getAvailablePorts();
-    void reconnectPort(int portSlot, QString portName);
+    SerialTester(
+            QComboBox *portBox_, QLabel *statusLabel_,
+            QCheckBox *activeBox_, QLineEdit *receivedData_);
+
+    void rescanAvailablePorts();
+    void sendTestMessage(QString message);
 
 private:
-    QVector<QSerialPort> *serial;
+    bool needSend = false;
+
+    QSerialPort port;
+    QComboBox *portBox;
+    QCheckBox *activeBox;
+    QLineEdit *receivedData;
+    QLabel *statusLabel;
+
+private slots:
+    void onPortBoxSelected(QString arg);
+    void handleReadyRead();
 };
 
 #endif // SERIALTESTER_H

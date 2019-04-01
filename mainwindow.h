@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <serialtester.h>
 
 namespace Ui {
 class MainWindow;
@@ -18,14 +19,10 @@ public:
 private slots:
     void on_sendDataBtn_clicked();
 
-    void on_COM1_portBox_currentTextChanged(const QString &arg1);
-    void on_COM2_portBox_currentTextChanged(const QString &arg1);
-    void on_COM3_portBox_currentTextChanged(const QString &arg1);
-    void on_COM4_portBox_currentTextChanged(const QString &arg1);
-    void on_COM5_portBox_currentTextChanged(const QString &arg1);
-
 private:
     Ui::MainWindow *ui;
+
+    SerialTester *com1, *com2, *com3, *com4, *com5;
 };
 
 

@@ -23,9 +23,19 @@
          <widget class="QComboBox" name="COM1_portBox"/>
         </item>
         <item>
+         <widget class="QLabel" name="COM1_status">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
          <widget class="QCheckBox" name="COM1_activeBox">
           <property name="text">
            <string>COM1</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -40,9 +50,19 @@
          <widget class="QComboBox" name="COM2_portBox"/>
         </item>
         <item>
+         <widget class="QLabel" name="COM2_status">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
          <widget class="QCheckBox" name="COM2_activeBox">
           <property name="text">
            <string>COM2</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -57,9 +77,19 @@
          <widget class="QComboBox" name="COM3_portBox"/>
         </item>
         <item>
+         <widget class="QLabel" name="COM3_status">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
          <widget class="QCheckBox" name="COM3_activeBox">
           <property name="text">
            <string>COM3</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -74,9 +104,19 @@
          <widget class="QComboBox" name="COM4_portBox"/>
         </item>
         <item>
+         <widget class="QLabel" name="COM4_status">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
          <widget class="QCheckBox" name="COM4_activeBox">
           <property name="text">
            <string>COM4</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -91,9 +131,19 @@
          <widget class="QComboBox" name="COM5_portBox"/>
         </item>
         <item>
+         <widget class="QLabel" name="COM5_status">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
          <widget class="QCheckBox" name="COM5_activeBox">
           <property name="text">
            <string>COM5</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
           </property>
          </widget>
         </item>

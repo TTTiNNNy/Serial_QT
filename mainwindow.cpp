@@ -1,8 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <serialtester.h>
 
-SerialTester serial(5);
+const QString message = "Hello from ";
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -10,41 +9,29 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QStringList ports = serial.getAvailablePorts();
-    ui->COM1_portBox->addItems(ports);
-    ui->COM2_portBox->addItems(ports);
-    ui->COM3_portBox->addItems(ports);
-    ui->COM4_portBox->addItems(ports);
-    ui->COM5_portBox->addItems(ports);
+    com1 = new SerialTester(ui->COM1_portBox, ui->COM1_status, ui->COM1_activeBox, ui->COM1_receivedData);
+    com2 = new SerialTester(ui->COM2_portBox, ui->COM2_status, ui->COM2_activeBox, ui->COM2_receivedData);
+    com3 = new SerialTester(ui->COM3_portBox, ui->COM3_status, ui->COM3_activeBox, ui->COM3_receivedData);
+    com4 = new SerialTester(ui->COM4_portBox, ui->COM4_status, ui->COM4_activeBox, ui->COM4_receivedData);
+    com5 = new SerialTester(ui->COM5_portBox, ui->COM5_status, ui->COM5_activeBox, ui->COM5_receivedData);
 }
 
 MainWindow::~MainWindow()
 {
+    delete com1;
+    delete com2;
+    delete com3;
+    delete com4;
+    delete com5;
+
     delete ui;
 }
 
 void MainWindow::on_sendDataBtn_clicked()
 {
-    // serial.sendSelected();
-}
-
-// ---------------------------- Port change events ----------------------------
-void MainWindow::on_COM1_portBox_currentTextChanged(const QString &arg1) {
-    serial.reconnectPort(1, arg1);
-}
-
-void MainWindow::on_COM2_portBox_currentTextChanged(const QString &arg1) {
-    serial.reconnectPort(2, arg1);
-}
-
-void MainWindow::on_COM3_portBox_currentTextChanged(const QString &arg1) {
-    serial.reconnectPort(3, arg1);
-}
-
-void MainWindow::on_COM4_portBox_currentTextChanged(const QString &arg1) {
-    serial.reconnectPort(4, arg1);
-}
-
-void MainWindow::on_COM5_portBox_currentTextChanged(const QString &arg1) {
-    serial.reconnectPort(5, arg1);
+    com1->sendTestMessage(message + "1");
+    com2->sendTestMessage(message + "2");
+    com3->sendTestMessage(message + "3");
+    com4->sendTestMessage(message + "4");
+    com5->sendTestMessage(message + "5");
 }
