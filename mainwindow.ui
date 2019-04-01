@@ -153,11 +153,22 @@
        </layout>
       </item>
       <item>
-       <widget class="QPushButton" name="sendDataBtn">
-        <property name="text">
-         <string>Отправить</string>
-        </property>
-       </widget>
+       <layout class="QHBoxLayout" name="controlRow">
+        <item>
+         <widget class="QPushButton" name="rescanPorts">
+          <property name="text">
+           <string>Обновить порты</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="sendDataBtn">
+          <property name="text">
+           <string>Отправить</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </item>

@@ -35,3 +35,12 @@ void MainWindow::on_sendDataBtn_clicked()
     com4->sendTestMessage(message + "4");
     com5->sendTestMessage(message + "5");
 }
+
+void MainWindow::on_rescanPorts_clicked()
+{
+    com1->rescanAvailablePorts();
+    com2->rescanAvailablePorts();
+    com3->rescanAvailablePorts();
+    com4->rescanAvailablePorts();
+    com5->rescanAvailablePorts();
+}

@@ -19,6 +19,8 @@ public:
 private slots:
     void on_sendDataBtn_clicked();
 
+    void on_rescanPorts_clicked();
+
 private:
     Ui::MainWindow *ui;
 
