@@ -15,19 +15,18 @@ class SerialTester : QObject
     Q_OBJECT
 
 public:
-    SerialTester(
-            QComboBox *portBox_, QLabel *statusLabel_,
-            QCheckBox *activeBox_, QLineEdit *receivedData_);
-
+    SerialTester(QComboBox*, QLabel*, QCheckBox*, QLineEdit*, QLineEdit*);
     void rescanAvailablePorts();
-    void sendTestMessage(QString message);
+    void sendTestMessage();
 
 private:
+    void clearReceiveBox();
     bool needSend = false;
 
     QSerialPort port;
     QComboBox *portBox;
     QCheckBox *activeBox;
+    QLineEdit *transmittedData;
     QLineEdit *receivedData;
     QLabel *statusLabel;
 

@@ -6,21 +6,28 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>691</width>
-    <height>282</height>
+    <width>1189</width>
+    <height>648</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
      <layout class="QVBoxLayout" name="mainContainer">
       <item>
        <layout class="QHBoxLayout" name="portRow1">
         <item>
-         <widget class="QComboBox" name="COM1_portBox"/>
+         <widget class="QComboBox" name="COM1_portBox">
+          <property name="minimumSize">
+           <size>
+            <width>75</width>
+            <height>0</height>
+           </size>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QLabel" name="COM1_status">
@@ -40,14 +47,32 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="COM1_receivedData"/>
+         <widget class="QLineEdit" name="COM1_transmittedData">
+          <property name="placeholderText">
+           <string>Поле отправки данных</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="COM1_receivedData">
+          <property name="placeholderText">
+           <string>Поле приема данных</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
       <item>
        <layout class="QHBoxLayout" name="portRow2">
         <item>
-         <widget class="QComboBox" name="COM2_portBox"/>
+         <widget class="QComboBox" name="COM2_portBox">
+          <property name="minimumSize">
+           <size>
+            <width>75</width>
+            <height>0</height>
+           </size>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QLabel" name="COM2_status">
@@ -67,14 +92,32 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="COM2_receivedData"/>
+         <widget class="QLineEdit" name="COM2_transmittedData">
+          <property name="placeholderText">
+           <string>Поле отправки данных</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="COM2_receivedData">
+          <property name="placeholderText">
+           <string>Поле приема данных</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
       <item>
        <layout class="QHBoxLayout" name="portRow3">
         <item>
-         <widget class="QComboBox" name="COM3_portBox"/>
+         <widget class="QComboBox" name="COM3_portBox">
+          <property name="minimumSize">
+           <size>
+            <width>75</width>
+            <height>0</height>
+           </size>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QLabel" name="COM3_status">
@@ -94,14 +137,32 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="COM3_receivedData"/>
+         <widget class="QLineEdit" name="COM3_transmittedData">
+          <property name="placeholderText">
+           <string>Поле отправки данных</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="COM3_receivedData">
+          <property name="placeholderText">
+           <string>Поле приема данных</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
       <item>
        <layout class="QHBoxLayout" name="portRow4">
         <item>
-         <widget class="QComboBox" name="COM4_portBox"/>
+         <widget class="QComboBox" name="COM4_portBox">
+          <property name="minimumSize">
+           <size>
+            <width>75</width>
+            <height>0</height>
+           </size>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QLabel" name="COM4_status">
@@ -121,14 +182,32 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="COM4_receivedData"/>
+         <widget class="QLineEdit" name="COM4_transmittedData">
+          <property name="placeholderText">
+           <string>Поле отправки данных</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="COM4_receivedData">
+          <property name="placeholderText">
+           <string>Поле приема данных</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
       <item>
        <layout class="QHBoxLayout" name="portRow5">
         <item>
-         <widget class="QComboBox" name="COM5_portBox"/>
+         <widget class="QComboBox" name="COM5_portBox">
+          <property name="minimumSize">
+           <size>
+            <width>75</width>
+            <height>0</height>
+           </size>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QLabel" name="COM5_status">
@@ -148,9 +227,33 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="COM5_receivedData"/>
+         <widget class="QLineEdit" name="COM1_transmittedData_5">
+          <property name="placeholderText">
+           <string>Поле отправки данных</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="COM5_receivedData">
+          <property name="placeholderText">
+           <string>Поле приема данных</string>
+          </property>
+         </widget>
         </item>
        </layout>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
       </item>
       <item>
        <layout class="QHBoxLayout" name="controlRow">
