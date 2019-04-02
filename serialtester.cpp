@@ -36,6 +36,8 @@ void SerialTester::onPortBoxSelected(QString arg)
     if (arg != "--")
     {
         port.setPortName(arg);
+        port.setBaudRate(38400);
+
         if (port.open(QIODevice::ReadWrite)) {
             setStatus(CONNECTED);
         }
