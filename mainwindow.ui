@@ -227,7 +227,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="COM1_transmittedData_5">
+         <widget class="QLineEdit" name="COM5_transmittedData">
           <property name="placeholderText">
            <string>Поле отправки данных</string>
           </property>
