@@ -36,6 +36,7 @@ private:
 private slots:
     void onPortBoxSelected(QString arg);
     void handleReadyRead();
+    void handlePortError(QSerialPort::SerialPortError);
 };
 
 #endif // SERIALTESTER_H

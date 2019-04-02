@@ -16,6 +16,12 @@ SerialTester::SerialTester(QComboBox *portBox, QLabel *statusLabel, QCheckBox *a
     connect(portBox,   SIGNAL(currentTextChanged(QString)), this, SLOT(onPortBoxSelected(QString)) );
     connect(&port,     SIGNAL(readyRead()),                 this, SLOT(handleReadyRead())          );
 
+    connect(&port,
+        SIGNAL(errorOccurred(QSerialPort::SerialPortError)),
+        this,
+        SLOT(handlePortError(QSerialPort::SerialPortError))
+    );
+
     setStatus(DISCONNECTED);
 }
 
@@ -63,6 +69,20 @@ void SerialTester::setStatus(enum serialStatus status)
     }
 
     statusLabel->setPalette(palette);
+}
+
+void SerialTester::handlePortError(QSerialPort::SerialPortError error) {
+    if (error == QSerialPort::ReadError ||
+        error == QSerialPort::WriteError ||
+        error == QSerialPort::ResourceError ||
+        error == QSerialPort::UnknownError)
+    {
+        port.close();
+        port.clearError();
+        clearReceiveBox();
+        portBox->setCurrentIndex(0);
+        setStatus(DISCONNECTED);
+    }
 }
 
 // ---------- Send ----------
