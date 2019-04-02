@@ -16,6 +16,7 @@ SerialTester::SerialTester(QComboBox *portBox, QLabel *statusLabel, QCheckBox *a
     connect(portBox,   SIGNAL(currentTextChanged(QString)), this, SLOT(onPortBoxSelected(QString)) );
     connect(&port,     SIGNAL(readyRead()),                 this, SLOT(handleReadyRead())          );
 
+    setStatus(DISCONNECTED);
 }
 
 void SerialTester::onPortBoxSelected(QString arg)
@@ -23,12 +24,15 @@ void SerialTester::onPortBoxSelected(QString arg)
     if (port.isOpen())
     {
         port.close();
+        setStatus(DISCONNECTED);
     }
 
     if (arg != "--")
     {
         port.setPortName(arg);
-        port.open(QIODevice::ReadWrite);
+        if (port.open(QIODevice::ReadWrite)) {
+            setStatus(CONNECTED);
+        }
     }
 }
 
@@ -43,6 +47,24 @@ void SerialTester::rescanAvailablePorts()
     }
 }
 
+void SerialTester::setStatus(enum serialStatus status)
+{
+    QPalette palette = statusLabel->palette();
+
+    switch(status) {
+    case CONNECTED:
+        palette.setColor(QPalette::WindowText, Qt::GlobalColor::darkGreen);
+        statusLabel->setText("+");
+        break;
+    case DISCONNECTED:
+        palette.setColor(QPalette::WindowText, Qt::GlobalColor::red);
+        statusLabel->setText("-");
+        break;
+    }
+
+    statusLabel->setPalette(palette);
+}
+
 // ---------- Send ----------
 void SerialTester::sendTestMessage()
 {
@@ -51,12 +73,12 @@ void SerialTester::sendTestMessage()
     {
         if (port.isOpen())
         {
-
+            setStatus(CONNECTED);
             port.write(this->activeBox->text().toUtf8()+": "+this->transmittedData->text().toUtf8());
         }
         else
         {
-            //statusLabel->setText("Порт не открыт!");
+            setStatus(DISCONNECTED);
         }
     }
 }

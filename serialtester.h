@@ -20,6 +20,9 @@ public:
     void sendTestMessage();
 
 private:
+    enum serialStatus { CONNECTED, DISCONNECTED };
+    void setStatus(enum serialStatus status);
+
     void clearReceiveBox();
     bool needSend = false;
 
