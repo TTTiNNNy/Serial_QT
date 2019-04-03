@@ -77,6 +77,7 @@ void SerialTester::handlePortError(QSerialPort::SerialPortError error) {
     if (error == QSerialPort::ReadError ||
         error == QSerialPort::WriteError ||
         error == QSerialPort::ResourceError ||
+        error == QSerialPort::PermissionError ||
         error == QSerialPort::UnknownError)
     {
         port.close();
